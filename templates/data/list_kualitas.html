@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Header -->
+    {% include 'header.html' %}
+  </head>
+  <body>
+    <div class="card">
+      <div class="card-body"><br><h3>List data Kondisi Perkerasan Jalan<br><h3></div>
+    </div>
+    <div class="page-body">
+      <div class="box">
+          <div class="box-body table-responsive">
+              <table class="table table-bordered table-striped table-hover" id="table_id">
+                  <thead>
+                      <tr>
+                          <th>No</th>
+                          <th>No Ruas</th>
+                          <th>Nama Jalan</th>
+                          <th>Start From</th>
+                          <th>PCI kanan</th>
+                          <th>PCI kiri</th>
+                          <th>IRI kanan</th>
+                          <th>IRI kiri</th>
+                          <th>Action</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                   
+                    {% for row in data %}
+                          <tr>
+                            <td>{{ loop.index }}</td>
+														<td>{{ row['nama_jalan'] }}</td>
+														<td>{{ row['start_from'] }}</td>
+														<td>{{ row['pci_kanan'] }}</td>
+														<td>{{ row['pci_kiri'] }}</td>
+                            <td>{{ row['iri_kanan'] }}</td>
+														<td>{{ row['iri_kiri'] }}</td>
+                              <td class="text-center">
+                                  <button class="btn btn-warning btn-xs" id="btnedit" href="" title="Atur">
+                                      <i class="fa fa-pencil"></i>
+                                  </button>
+                                  <button class="btn btn-danger btn-xs" id="btndel" href="{{url_for('proses_delete',id_kondisi=row['id_kondisi'])}}" title="Hapus">
+                                      <i class="fa fa-trash"></i>
+                                  </button>
+
+                              </td>
+                            </tr>
+                              {% endfor %}
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+</div>
+
+    {% include 'footer.html' %}
+    <!-- Script -->
+    {% include 'script.html' %}
+
+    <!-- script -->
+  </body>
+</html>

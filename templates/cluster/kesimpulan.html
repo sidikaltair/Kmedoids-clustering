@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Header -->
+    {% include 'header.html' %}
+  </head>
+  <body>
+    <div class="main-content">
+      <div class="main-content-inner">
+        <div class="page-content">
+          <div class="page-header">
+            <h1>
+              Method
+              <small>
+                <i class="ace-icon fa fa-angle-double-right"></i>
+                Elbow
+              </small>
+            </h1>
+          </div><!-- /.page-header -->
+          <div class="row">
+            <div class="col-xs-12">
+              <!-- PAGE CONTENT BEGINS -->
+              <div class="row">
+                <div class="col-lg-12" style="margin-top: 10px;">
+                  <h1>PCI</h1>  
+                </div>
+                <div class="col-md-12">
+                  <div class="card-body">
+                    <div class="row">
+                      {% for row in data_pci :%}
+                      <div class="col-lg-4">
+                        <div class="btn-danger" >
+                          <div class="container" style="padding: 20px;">
+                            <h4><a href="{{ url_for('data_cluster', cluster=row[4])}}" style="color:white">Cluster : {{row[4]}}</a></h4>
+                            <h4><b>Kualitas Jalan Buruk : {{row[2]}}</b></h4>
+                            <h4><b>Kualitas Jalan Sedang : {{row[1]}}</b></h4>
+                            <h4><b>Kualitas Jalan Baik : {{row[0]}}</b></h4>
+                        </div>
+                        </div>
+                      </div>
+                      {% endfor %}     
+                      <div class="col-lg-4" style="margin-top: 10px;">
+                        <div class="btn-danger">
+                          <div class="container" style="padding: 20px;">
+                            <h4><b>Prioritas Perbaikan Ketiga</b></h4>
+                         </div>
+                        </div>   
+                      </div>
+                      <div class="col-lg-4" style="margin-top: 10px;">
+                        <div class="btn-danger">
+                            <div class="container" style="padding: 20px;">
+                                <h4><b>Prioritas Perbaikan Kedua</b></h4>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-4" style="margin-top: 10px;">
+                        <div class="btn-success">
+                            <div class="container" style="padding: 20px;">
+                                <h4><b>Prioritas Perbaikan Pertama</b></h4>
+                            </div>
+                        </div>
+                      </div>                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <!-- PAGE CONTENT BEGINS -->
+              <div class="row">
+                <div class="col-lg-12" style="margin-top: 10px;">
+                  <h1>IRI</h1>
+                </div>
+                <div class="col-md-12">
+                  <div class="card-body">
+                    <div class="row">
+                      {% for row in data_iri :%}
+                      <div class="col-lg-4">
+                        <div class="btn-danger" >
+                          <div class="container" style="padding: 20px;">
+                            <h4><a href="{{ url_for('data_cluster', cluster=row[4])}}" style="color:white">Cluster : {{row[4]}}</a></h4>
+                            <h4><b>Kualitas Jalan Buruk : {{row[2]}}</b></h4>
+                            <h4><b>Kualitas Jalan Sedang : {{row[1]}}</b></h4>
+                            <h4><b>Kualitas Jalan Baik : {{row[0]}}</b></h4>
+                        </div>
+                        </div>
+                      </div>
+                      {% endfor %}     
+                      <div class="col-lg-4" style="margin-top: 10px;">
+                        <div class="btn-danger">
+                          <div class="container" style="padding: 20px;">
+                            <h4><b>Prioritas Perbaikan Ketiga</b></h4>
+                         </div>
+                        </div>   
+                      </div>
+                      <div class="col-lg-4" style="margin-top: 10px;">
+                        <div class="btn-danger">
+                            <div class="container" style="padding: 20px;">
+                                <h4><b>Prioritas Perbaikan Kedua</b></h4>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-4" style="margin-top: 10px;">
+                        <div class="btn-success">
+                            <div class="container" style="padding: 20px;">
+                                <h4><b>Prioritas Perbaikan Pertama</b></h4>
+                            </div>
+                        </div>
+                      </div>                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% include 'footer.html' %}
+    {% include 'script.html' %} 
+    <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+      <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+    </a>
+  </div><!-- /.main-container -->
+  </body>
+</html>

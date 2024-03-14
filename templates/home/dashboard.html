@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Header -->
+    {% include 'header.html' %}
+  </head>
+  <body>
+    <div class="main-content">
+      <div class="main-content-inner">
+        <div class="page-content">
+          <div class="page-header">
+            <h1>
+              Method
+              <small>
+                <i class="ace-icon fa fa-angle-double-right"></i>
+                Elbow
+              </small>
+            </h1>
+          </div><!-- /.page-header -->
+          <div class="row">
+            <div class="col-xs-12">
+              <!-- PAGE CONTENT BEGINS -->
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card-body">
+                    <div class="row" style="margin-top: 100px;">
+                      <div class="col-lg-6">
+                        <div class="btn-danger" >
+                          <div class="container" style="padding: 20px;">
+                            <h4><b>Jumlah Data : {{jumlah}}</b></h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="btn-danger" >
+                          <div class="container" style="padding: 20px;">
+                            <h4><a href="{{ url_for('elbow')}}" style="color:white">Tampilkan Elbow</a></h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-12" style="margin-top: 5px;">
+                        <div class="btn-danger" >
+                          <div class="container" style="padding: 20px;">
+                            <h4><a href="{{ url_for('kmedoidsindex')}}" style="color:white">Mulai Kmedoids</a></h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% include 'footer.html' %}
+    {% include 'script.html' %} 
+    <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+      <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+    </a>
+  </div><!-- /.main-container -->
+  </body>
+</html>

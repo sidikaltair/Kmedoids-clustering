@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Header -->
+    {% include 'header.html' %}
+  </head>
+  <body>
+    <div class="main-content">
+      <div class="main-content-inner">
+        <div class="page-content">
+          <div class="page-header">
+            <h1>
+              Method
+              <small>
+                <i class="ace-icon fa fa-angle-double-right"></i>
+                Kmedoids
+              </small>
+            </h1>
+          </div><!-- /.page-header -->
+          <div class="row">
+            <div class="col-xs-12">
+              <!-- PAGE CONTENT BEGINS -->
+              <div class="row">
+                <div class="col-md-12">
+                  <form action="{{url_for('kmedoids')}}" method="post">
+                    <input class="form-control" type="number" name="k" placeholder="masukan jumlah cluster" required>
+                    <center>
+                      <button class="btn btn-primary" type="submit">Submit</button>
+                    </center>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% include 'footer.html' %}
+    {% include 'script.html' %} 
+    <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+      <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+    </a>
+  </div><!-- /.main-container -->
+  </body>
+</html>

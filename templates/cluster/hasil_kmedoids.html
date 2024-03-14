@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Header -->
+    {% include 'header.html' %}
+  </head>
+  <body>
+    <div class="main-content">
+      <div class="main-content-inner">
+        <div class="page-content">
+          <div class="page-header">
+            <h1>
+              Method
+              <small>
+                <i class="ace-icon fa fa-angle-double-right"></i>
+                Kmedoids
+              </small>
+            </h1>
+          </div><!-- /.page-header -->
+          <div class="row">
+            <div class="col-xs-12">
+              <!-- PAGE CONTENT BEGINS -->
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <center>
+                            <img src="static/3d_display2.jpg" style="width:600px;margin-left: -50px;">
+                        </center>
+                      </div>
+                      <div class="col-lg-6">
+                        <center>
+                            <img src="static/3d_display1.jpg" style="width:600px">
+                        </center>
+                      </div>
+
+                      {% for i in range(1, k+1):%}
+                      <div class="col-lg-4" style="margin-top: 5px;">
+                        <div class="btn-danger" >
+                          <div class="container" style="padding: 20px;">
+                            <h4><a href="{{ url_for('data_cluster', cluster=i)}}" style="color:white">Lihat Data Cluster {{i}}</a></h4>
+                          </div>
+                        </div>
+                      </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="page-header">
+                <h1>
+                  List Medoids
+                  <small>
+                    <i class="ace-icon fa fa-angle-double-right"></i>
+                    List Medoids
+                  </small>
+                </h1>
+              </div><!-- /.page-header -->
+              <div class="row">
+                <div class="col-xs-12">
+                  <!-- PAGE CONTENT BEGINS -->
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="box-body table-responsive">
+                        <table class="table table-bordered table-striped table-hover" id="table_id">
+                            <thead>
+                                <tr>
+                                    <th>Cluster</th>
+                                    <th>PCI kanan</th>
+                                    <th>PCI kiri</th>
+                                    <th>IRI kanan</th>
+                                    <th>IRI kiri</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                             
+                              {% for row in medoids %}
+                                    <tr>
+                                      <td>{{ loop.index }}</td>
+                                      <td>{{ row[0] }}</td>
+                                      <td>{{ row[1] }}</td>
+                                      <td>{{ row[2] }}</td>
+                                      <td>{{ row[3] }}</td>
+                                        {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% include 'footer.html' %}
+    {% include 'script.html' %} 
+    <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+      <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+    </a>
+  </div><!-- /.main-container -->
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<button class="btn btn-primary" id="print">aa</button>
+</body>
+<!-- <script type="text/javascript" src="../"></script> -->
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" src="recta.min.js"></script/>
+
+<script type="text/javascript">
+	var printer
+
+	$('#print').click(() => {
+	  var key  = 7829320634
+	  var port = 1811
+	  
+	  // Initial printer with key and port from form input
+	  printer = new Recta(key, port)
+	  // Opening printer
+	  printer.open().then(() => {
+	  	// Show print button, it's hidden by defaulta
+	    $('#print').show()
+	  }).catch((e) => {
+	  	// Show Error if get an Error
+	    $('#error').text(e)
+	  })
+	})
+
+	$('#print').click(() => {
+	  printer.align('center')
+	    .text('Hello World !!')
+	    .bold(true)
+	    .text('This is bold text')
+	    .bold(false)
+	    .underline(true)
+	    .text('This is underline text')
+	    .underline(false)
+	    .barcode('UPC-A', '123456789012')
+	    .cut()
+	    .print()
+	})
+
+</script>
+</html>
